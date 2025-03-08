@@ -3,22 +3,32 @@
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [dark, setDark] = useState<boolean | null>(null); // `null` prevents SSR mismatch
+  const [dark, setDark] = useState<boolean | null>(null); // Prevents SSR mismatch
 
-  // Effect runs only on the client to set the correct theme
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
+    // Set theme based on stored preference or system preference
     if (storedTheme) {
       setDark(storedTheme === "dark");
     } else {
       setDark(prefersDark);
     }
+
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleChange = (e: MediaQueryListEvent) => {
+      setDark(e.matches);
+      localStorage.setItem("theme", e.matches ? "dark" : "light");
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
 
   useEffect(() => {
-    if (dark === null) return; // Don't update class until theme is determined
+    if (dark === null) return; // Prevent updating before theme is set
 
     if (dark) {
       document.documentElement.classList.add("dark");
@@ -39,7 +49,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto dark:bg-black dark:text-white text-gray-700">
           <div className="flex items-center justify-between p-4">
             <nav>Logo</nav>
-            {dark !== null && ( // Avoid rendering button until theme is determined
+            {dark !== null && ( // Prevents hydration issues
               <button
                 onClick={handleDarkMode}
                 className="bg-black text-white rounded px-4 py-1.5 dark:bg-white dark:text-black"
