@@ -1,113 +1,88 @@
-import Image from 'next/image'
+"use client";
+
+import { useState } from "react";
 
 export default function Home() {
+  const [dark, setDark] = useState(false);
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div className={` ${dark ? "dark" : ""}`}>
+      <div
+        className={`  h-screen cursor-pointer bg-white text-gray-700 dark:text-white dark:bg-black `}
+      >
+        <div className="max-w-7xl mx-auto dark:bg-black dark:text-white text-gary-700">
+          <div className="flex items-center justify-between p-4 ">
+            <nav>Logo</nav>
+            <button
+              onClick={() => setDark(!dark)}
+              className="bg-black text-white rounded px-4 py-1.5 dark:bg-white dark:text-black"
+            >
+              {dark ? "Light" : "Dark"}
+            </button>
+          </div>
+
+          <p className="py-4 dark:text-white">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus velit perferendis, aliquid, maxime accusantium
+            voluptatem quod maiores, consequatur magnam excepturi a ducimus
+            fugit? Dolor eius at error temporibus hic, accusantium quibusdam
+            odit laboriosam tempore! At quia sunt expedita sit aliquid vitae
+            ipsa voluptatum molestias non illum, dolores voluptates asperiores
+            quo temporibus vel nesciunt dolorem accusamus dicta dolore. Sunt,
+            exercitationem rem! Suscipit, animi similique saepe temporibus autem
+            harum? Impedit amet temporibus quae culpa quibusdam reprehenderit
+            rem ratione nesciunt dignissimos, reiciendis recusandae maiores esse
+            similique unde saepe, non cum. Iste quam voluptatum reprehenderit!
+            Minima, veniam voluptatem laborum molestias placeat quo dicta
+            provident asperiores, non eaque inventore! Qui sint rem harum,
+            similique reprehenderit at sunt voluptate a est porro maxime
+            expedita! Voluptatibus, hic modi fuga eveniet magnam, provident
+            deleniti ipsam ad praesentium ratione minus id officia natus debitis
+            vero nam tempore rerum tenetur, quidem quos aliquam recusandae.
+            Mollitia eos necessitatibus quia voluptatibus consequatur voluptatum
+            corrupti iure voluptates minus, laboriosam ut sed a earum porro
+            doloremque. Nihil a eveniet eos autem quia, voluptatibus tenetur
+            modi, asperiores aspernatur ea alias excepturi, dolor soluta
+            voluptatem. Obcaecati dolor eveniet voluptates dolorum magnam,
+            voluptas facilis maiores sequi perspiciatis. Odit nemo quidem
+            consequuntur quam nisi non omnis, veritatis odio quisquam facilis
+            saepe minus fuga totam labore rerum aspernatur quaerat? Delectus
+            inventore esse consectetur expedita impedit reprehenderit aliquam
+            dolorum a magnam, est maiores accusantium error similique non sed ut
+            officiis perspiciatis magni officia ratione dignissimos id?
+            Assumenda, veniam? Quaerat sunt modi accusamus iste quam laudantium
+            architecto praesentium nostrum omnis deserunt. Dignissimos ex magnam
+            tempore! Obcaecati voluptas enim suscipit quos, deleniti illum
+            officiis corporis laudantium dolores earum iste, eius aliquam.
+            Asperiores eos voluptatibus laborum nemo quidem ex expedita velit
+            deleniti id sed animi, non possimus illum, totam quas iusto rem
+            ullam modi! Nemo aperiam illum quia neque minus quasi incidunt odio
+            id obcaecati, maiores nobis sapiente sequi beatae non. Velit
+            quibusdam magnam similique culpa eum doloremque asperiores
+            laudantium expedita, sapiente atque saepe, totam voluptate minima
+            sint possimus. Quaerat illum voluptatem amet quisquam quibusdam
+            animi maiores. Dignissimos illo vel inventore aliquam, repudiandae
+            nostrum fuga magni non illum quaerat nulla excepturi odio corrupti
+            dolor sapiente officia enim nam similique velit magnam placeat sit
+            ut consequuntur quo? Officiis delectus minus dolorem quibusdam illo
+            quam pariatur laboriosam ipsum, laudantium est vero sed expedita
+            adipisci voluptatem facere. Voluptate numquam consequuntur deserunt
+            quasi esse iure facilis beatae repellendus asperiores suscipit?
+            Ullam similique eligendi nemo quas placeat ipsa ratione, quia
+            suscipit repudiandae recusandae veritatis numquam, velit dolores
+            officia aliquid ab autem amet vitae nulla. Soluta alias voluptas
+            nostrum atque adipisci illum vitae maiores cumque ipsum aperiam
+            veritatis qui consequuntur distinctio minus aliquam autem, molestias
+            eligendi. Quam, totam repudiandae? Culpa, a velit corrupti unde
+            consequuntur sint deserunt repellendus hic ipsam et pariatur facilis
+            harum eveniet aperiam omnis ex possimus optio cupiditate eius esse
+            quibusdam quis dolores fugit nemo! Molestias impedit officiis
+            repellat modi odio placeat rem, consequatur ab voluptatem amet
+            vitae, dolorem distinctio in? Ullam sapiente architecto dolore at
+            consequuntur, officiis nisi culpa similique magnam voluptates
+            quidem. Aspernatur, omnis!
+          </p>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
